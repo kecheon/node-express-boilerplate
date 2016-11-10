@@ -1,5 +1,12 @@
 # Node Express Typescript boilerplate
 
+##TL;DR (급한 분은 이것만 보세요)
+> git clone
+> cd node-express-boilerplate
+> npm install
+> enjoy coding...
+
+## 들어가는 말
 코딩을 하다 보면 작업 환경과 도구가 굉장히 중요하단 것을 알게 된다.
 필자는 경험이 일천하여 처음 Node를 사용하면서 익숙하지 않은 환경에 어리버리 헤매다 보면 
 시간도 낭비가 되지만 무엇 보다 코딩에 흥미를 잃고 좌절하게 된다.
@@ -33,7 +40,9 @@ $ npm install @types/node --save-dev
 $ npm install @types/express --save-dev
 ```
 typescript option을 설정하기 위해 tsconfig.json 설치
->$ node ./node_modules/.bin/tsc --init
+```
+$ node ./node_modules/.bin/tsc --init
+```
 
 현재 디렉토리는 다음과 같다.
 
