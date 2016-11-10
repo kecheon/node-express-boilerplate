@@ -34,6 +34,7 @@ typescript option을 설정하기 위해 tsconfig.json 설치
 현재 디렉토리는 다음과 같다.
 
 >$ ls -al
+
 >total 24
 >drwxr-xr-x   7 cheon  staff   238 Nov 10 14:04 .
 >drwxr-xr-x  24 cheon  staff   816 Nov 10 13:07 ..
@@ -80,5 +81,14 @@ package.json의 scripts항이 다음과 같이 추가 한다.
 >$ npm start
 
 됐다. 커밋하자
-> git add .
-> git cm -m "nodemon 추가하고 test app ok"
+>$ git add .
+>$ git cm -m "nodemon 추가하고 test app ok"
+
+## 4. Setup TDD with Jasmine
+
+Jasmine typescript definition 설치
+>$ npm install @types/jasmine --save-dev
+
+install Karma and Karma preprocessor for Typescript
+>$ npm install karma --save-dev
+>$ npm install karma-typescript-preprocessor --save-dev
