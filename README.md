@@ -33,16 +33,17 @@ typescript option을 설정하기 위해 tsconfig.json 설치
 
 현재 디렉토리는 다음과 같다.
 
->$ ls -al
-
->total 24
->drwxr-xr-x   7 cheon  staff   238 Nov 10 14:04 .
->drwxr-xr-x  24 cheon  staff   816 Nov 10 13:07 ..
->drwxr-xr-x   8 cheon  staff   272 Nov 10 14:00 .idea
->-rw-r--r--   1 cheon  staff  1261 Nov 10 14:00 README.md
->drwxr-xr-x   5 cheon  staff   170 Nov 10 14:03 node_modules
->-rw-r--r--   1 cheon  staff   668 Nov 10 14:03 package.json
->-rw-r--r--   1 cheon  staff   148 Nov 10 14:04 tsconfig.json
+```
+$ ls -al
+total 24
+drwxr-xr-x   7 cheon  staff   238 Nov 10 14:04 .
+drwxr-xr-x  24 cheon  staff   816 Nov 10 13:07 ..
+drwxr-xr-x   8 cheon  staff   272 Nov 10 14:00 .idea
+-rw-r--r--   1 cheon  staff  1261 Nov 10 14:00 README.md
+drwxr-xr-x   5 cheon  staff   170 Nov 10 14:03 node_modules
+-rw-r--r--   1 cheon  staff   668 Nov 10 14:03 package.json
+-rw-r--r--   1 cheon  staff   148 Nov 10 14:04 tsconfig.json
+```
 
 node와 express를 가지고 typescript로 코딩할 준비가 끝났다.
 
@@ -71,11 +72,13 @@ compile한 다음 실행해 보자
 >$ npm install nodemon --save-dev
 
 package.json의 scripts항이 다음과 같이 추가 한다.
->  "scripts": {
->    "test": "echo \"Error: no test specified\" && exit 1",
->    "start": "npm run build:live",
->    "build:live": "nodemon --exec ./node_modules/.bin/ts-node -- ./index.ts"
->  },
+```
+"scripts": {
+  "test": "echo \"Error: no test specified\" && exit 1",
+  "start": "npm run build:live",
+  "build:live": "nodemon --exec ./node_modules/.bin/ts-node -- ./index.ts"
+},
+```
 
 이제 npm start 하면 코드가 변경될 때 마다 자동으로 컴파일한 다음 실행하게 된다.
 >$ npm start
@@ -89,6 +92,42 @@ package.json의 scripts항이 다음과 같이 추가 한다.
 Jasmine typescript definition 설치
 >$ npm install @types/jasmine --save-dev
 
-install Karma and Karma preprocessor for Typescript
->$ npm install karma --save-dev
->$ npm install karma-typescript-preprocessor --save-dev
+Jasmine-ts 설치
+>$ npm install jasmine-ts --save-dev
+>$ npm install jasmine-spec-reporter --save-dev
+>$ ./node_modules/.bin/jasmine-ts init
+
+spec/support/jasmine.json 생성
+```
+{
+  "reporters": [
+    {
+      "name": "jasmine-spec-reporter",
+      "options": {
+        "displayStacktrace": "all"
+      }
+    }
+  ]
+}
+```
+
+package.json 수정
+```
+{
+  "scripts": {
+    "test": "jasmine-ts 'path/to/specs/**/*.spec.ts'"
+  }
+}
+```
+
+학인해 보자
+```
+$ npm test
+1 spec, 0 failures
+Finished in 0.012 seconds
+
+Executed 1 of 1 spec SUCCESS in 0.012 sec.
+```
+
+
+

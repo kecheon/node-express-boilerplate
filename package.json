@@ -4,7 +4,7 @@
   "description": "코딩을 하다 보면 작업 환경과 도구가 굉장히 중요하단 것을 알게 된다. 필자는 경험이 일천하여 처음 Node를 사용하면서 익숙하지 않은 환경에 어리버리 헤매다 보면  시간도 낭비가 되지만 무엇 보다 코딩에 흥미를 잃고 좌절하게 된다.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jasmine-ts '**/*.spec.ts'",
     "start": "npm run build:live",
     "build:live": "nodemon --exec ./node_modules/.bin/ts-node -- ./index.ts"
   },
@@ -13,7 +13,10 @@
   "license": "ISC",
   "devDependencies": {
     "@types/express": "^4.0.33",
+    "@types/jasmine": "^2.5.37",
     "@types/node": "^6.0.46",
+    "jasmine-spec-reporter": "^2.7.0",
+    "jasmine-ts": "0.0.3",
     "nodemon": "^1.11.0",
     "ts-node": "^1.7.0",
     "typescript": "^2.0.8"
