@@ -1,10 +1,12 @@
 # Node Express Typescript boilerplate
 
 ##TL;DR (급한 분은 이것만 보세요)
-> git clone
-> cd node-express-boilerplate
-> npm install
-> enjoy coding...
+```
+$ git clone
+$ cd node-express-boilerplate
+$ npm install
+ enjoy coding...
+```
 
 ## 들어가는 말
 코딩을 하다 보면 작업 환경과 도구가 굉장히 중요하단 것을 알게 된다.
