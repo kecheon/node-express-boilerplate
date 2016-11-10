@@ -1,0 +1,17 @@
+{
+  "name": "node-express-boilerplate",
+  "version": "1.0.0",
+  "description": "코딩을 하다 보면 작업 환경과 도구가 굉장히 중요하단 것을 알게 된다. 필자는 경험이 일천하여 처음 Node를 사용하면서 익숙하지 않은 환경에 어리버리 헤매다 보면  시간도 낭비가 되지만 무엇 보다 코딩에 흥미를 잃고 좌절하게 된다.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/express": "^4.0.33",
+    "@types/node": "^6.0.46",
+    "typescript": "^2.0.8"
+  }
+}
