@@ -169,9 +169,11 @@ $ webdriver-manager start
 ```
 
 이제 e2e test를 실시해 본다.
+protractor config 파일을 작성한 다음
 spec file을 작성하고 protractor를 돌린다.
 ```
-$ vi test.spec.e2e.ts
+$ vi protractor.conf.js
+$ vi test.spec.e2e.js
 ...
 $ protractor
 ```
@@ -180,7 +182,8 @@ $ protractor
 // Angular app이 아닌 경우 이걸 넣어주야 한다.
   browser.ignoreSynchronization = true;
 
-spec 파일을 고쳐넣고 다시 프로트랙터를 돌리니 pass
+spec 파일을 고쳐넣고 다시 프로트랙터를 돌리니 pass.
+
 git commit한다.
 
 
