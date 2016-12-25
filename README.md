@@ -153,5 +153,35 @@ Finished in 0.012 seconds
 Executed 1 of 1 spec SUCCESS in 0.012 sec.
 ```
 
+## 5. End2End test setup with Protractor
+
+unit test와 e2e test가 자꾸만 헷갈리게 되는 것은 나이 탓인가?
+e2e test해야 할 것과 unit test 해야 할 것이 잘 구분되지 않는다.
+뭔가 테스트가 잘 안될 때는 이게 둘중 어느 것을 해야하는 지를 잠시 생각해 보아야 한다.
+
+[Protractor](http://www.protractortest.org/#/)를 설치하고 webdriver를 구동한다.
+webdriver는 selenimun server를 구동시켜 놓고 테스트 브라우저가 우리의 사이트에 접속하는 것을 모사해 준다.
+
+```
+$ npm install protractor -g
+$ webdriver-manager update
+$ webdriver-manager start
+```
+
+이제 e2e test를 실시해 본다.
+spec file을 작성하고 protractor를 돌린다.
+```
+$ vi test.spec.e2e.ts
+...
+$ protractor
+```
+웨이셤머~ 시키는 대로 했는데  angular 관련된 오류가 발생했다.
+개발새발 원인을 찾아보니 angular app이 아닌 endpoint를 접속할 때는 표시를 해줘야 한단다.
+// Angular app이 아닌 경우 이걸 넣어주야 한다.
+  browser.ignoreSynchronization = true;
+
+spec 파일을 고쳐넣고 다시 프로트랙터를 돌리니 pass
+git commit한다.
+
 
 

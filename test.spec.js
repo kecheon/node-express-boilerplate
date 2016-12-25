@@ -3,4 +3,3 @@ describe('1st Test for jasmine', function () {
         expect(1 + 1).toEqual(2);
     });
 });
-//# sourceMappingURL=test.spec.js.map
